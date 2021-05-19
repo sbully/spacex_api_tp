@@ -1,0 +1,7 @@
+.home-title {
+  text-align: center;
+  color: var(--primary);
+}
+.home {
+  height: 90vh;
+}

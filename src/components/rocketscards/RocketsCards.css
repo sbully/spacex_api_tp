@@ -1,0 +1,61 @@
+.rocket-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rocket-card-item {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--primary);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.945);
+  margin: 2em 0em;
+  width: 70%;
+  min-width: 600px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  height: 350px;
+}
+
+.rocket-card-item-img {
+  height: 300px;
+  width: 300px;
+  object-fit: fill;
+}
+.rocket-card-item-img:hover {
+  transition: all 0.5s ease;
+  scale: 1.1;
+  border-radius: 10px;
+}
+.roket-card-item-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  margin-left: 1em;
+}
+.rocket-card-item-name {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.rocket-card-item-btn {
+  align-self: flex-end;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  background-color: #0d93ec;
+  color: white;
+  font-weight: bold;
+}
+.rocket-card-item-btn:hover {
+  transition: all 0.5s ease;
+  scale: 1.1;
+}
+.rocket-card-item-description {
+  height: 100%;
+  overflow: hidden;
+  font-size: 18px;
+  margin-top: 1em;
+}
