@@ -4,7 +4,7 @@ import { CountDown } from '../../components/index';
 
 function CardItem(props) {
   return (
-    <li key='{props.missionIncoming.id}' className='cards_item'>
+    <li className='cards_item'>
       <div className='cards_item_container'>
         <img
           className='cards_item_img'
