@@ -1,7 +1,43 @@
-.home-title {
-  text-align: center;
-  color: var(--primary);
-}
 .home {
-  height: 90vh;
+}
+.home-module {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+/* .home-module-wrapper-img {
+  height: 940px;
+  max-width: 2400px;
+  object-fit: fill;
+} */
+.home-module-wrapper {
+  position: relative;
+  height: 940px;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: center center;
+  background-size: cover;
+}
+.left-wrapper {
+  position: absolute;
+  display: block;
+  left: 15%;
+  bottom: 15%;
+  color: white;
+  width: 500px;
+}
+.left-wrapper-context {
+  font-size: 25px;
+  font-weight: bold;
+}
+.left-wrapper-title {
+  font-size: 45px;
+}
+
+.left-wrapper-description {
+  font-size: 18px;
 }

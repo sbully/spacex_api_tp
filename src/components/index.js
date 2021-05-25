@@ -5,6 +5,7 @@ import NavBar from './navbar/NavBar';
 import RocketsCards from './rocketscards/RocketsCards';
 import RocketItem from './rocketItem/RocketItems';
 import CustomModal from './customModal/CustomModal';
+import HomeModule from './homemodule/HomeModule';
 
 export {
   Cards,
@@ -14,4 +15,5 @@ export {
   RocketsCards,
   RocketItem,
   CustomModal,
+  HomeModule,
 };

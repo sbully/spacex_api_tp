@@ -5,7 +5,7 @@ import './Upcoming.css';
 function Upcoming() {
   return (
     <div className='Upcoming'>
-      <h1>Launches Upcoming</h1>
+      <h1 className='Upcoming-title'>Launches Upcoming</h1>
       <Cards />
     </div>
   );
