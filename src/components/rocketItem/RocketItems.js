@@ -4,31 +4,34 @@ import { CustomModal } from '../';
 import Modal from 'react-modal';
 import '../customModal/CustomModal.css';
 
-function RocketItems(props) {
-  const rocket = props.rocket;
-  const [openModal, setOpenModal] = useState(false);
+function RocketItems({ rocket }) {
+  /* const rocket = props.rocket; */
+  const [modal, setModal] = useState({ isOpen: false });
 
-  function handleModal() {
-    setOpenModal(!openModal);
+  /**DO TwO FUNCTION */
+  function handleToggleModal() {
+    setModal({ isOpen: true });
+  }
+  function handleCloseModal() {
+    setModal({ isOpen: false });
   }
 
   return (
     <li className='rocket-card-item'>
       <CustomModal
-        className='custom-modal'
         rocket={rocket}
-        openModal={openModal}
-        handleModal={handleModal}
+        openModal={modal.isOpen}
+        onClose={handleCloseModal}
       />
       <img
         className='rocket-card-item-img'
-        src={props.rocket.flickr_images[0]}
+        src={rocket.flickr_images[0]}
         alt='rocket'
       />
       <div className='roket-card-item-body'>
         <p className='rocket-card-item-name'>{rocket.name}</p>
         <p className='rocket-card-item-description'>{rocket.description}</p>
-        <button className='rocket-card-item-btn' onClick={handleModal}>
+        <button className='rocket-card-item-btn' onClick={handleToggleModal}>
           More information
         </button>
       </div>
