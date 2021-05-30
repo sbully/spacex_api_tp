@@ -5,10 +5,8 @@ import Modal from 'react-modal';
 import '../customModal/CustomModal.css';
 
 function RocketItems({ rocket }) {
-  /* const rocket = props.rocket; */
   const [modal, setModal] = useState({ isOpen: false });
 
-  /**DO TwO FUNCTION */
   function handleToggleModal() {
     setModal({ isOpen: true });
   }

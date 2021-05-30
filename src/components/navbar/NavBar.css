@@ -10,7 +10,13 @@
   z-index: 100;
   width: 100%;
 }
-
+.navbar-a {
+  height: 100%;
+}
+.navbar-img {
+  height: 100%;
+  object-fit: fill;
+}
 .nav-menu {
   display: flex;
   flex-direction: row;
@@ -36,4 +42,15 @@
 .nav-links:hover {
   transition: all 0.5s ease-out;
   text-decoration: underline;
+}
+
+.navbar-flag-container {
+  margin-left: 5rem;
+  display: flex;
+}
+.navbar-img-flag {
+  height: 30px;
+  width: 40px;
+  object-fit: fill;
+  margin: 0 1em;
 }
