@@ -3,35 +3,38 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { SpaceXLogoWhite, Flag_Fr, Flag_De, Flag_En } from '../assets/';
 import LangageContext from '../assets/langage/LangageContext';
+import { useTranslation } from 'react-i18next';
 
 function NavBar() {
-  const [langage, setLangage] = useContext(LangageContext);
+  /* const [langage, setLangage] = useContext(LangageContext); */
+  const changeLanguage = useContext(LangageContext);
   function handleClickImg(e) {
     console.log(e.target.value);
-    setLangage(e.target.value);
+    changeLanguage(e.target.value);
   }
+
+  const { t, i18n } = useTranslation();
 
   return (
     <>
       <nav className='navbar'>
-        <p style={{ color: 'white' }}>{langage}</p>
         <a className='navbar-a' href='/'>
           <img className='navbar-img' alt='logo SpaceX' src={SpaceXLogoWhite} />
         </a>
         <ul className='nav-menu'>
           <li className='nav-menu-item'>
             <Link to='/' className='nav-links'>
-              Home
+              {t('Home')}
             </Link>
           </li>
           <li className='nav-menu-item'>
             <Link to='/rockets' className='nav-links'>
-              Rockets
+              {t('Rockets')}
             </Link>
           </li>
           <li className='nav-menu-item'>
             <Link to='/upcoming' className='nav-links'>
-              Upcoming
+              {t('Upcoming')}
             </Link>
           </li>
         </ul>
@@ -42,7 +45,7 @@ function NavBar() {
             src={Flag_En}
             alt='England flag'
             onClick={handleClickImg}
-            value='ENGLISH'
+            value='en'
           />
           <input
             className='navbar-img-flag'
@@ -50,7 +53,7 @@ function NavBar() {
             src={Flag_Fr}
             alt='France flag'
             onClick={handleClickImg}
-            value='FRENCH'
+            value='fr'
           />
           <input
             className='navbar-img-flag'
@@ -58,7 +61,7 @@ function NavBar() {
             src={Flag_De}
             alt='DeutschLand flag'
             onClick={handleClickImg}
-            value='DEUTSCH'
+            value='de'
           />
         </div>
       </nav>
