@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import './CustomModal.css';
+import { useTranslation } from 'react-i18next';
 
 function CustomModal({ openModal, rocket, onClose }) {
   function handleClickClose() {
     onClose();
   }
+  const { t, i18n } = useTranslation();
 
   return (
     <Modal className='custom-modal' isOpen={openModal}>
@@ -15,19 +17,22 @@ function CustomModal({ openModal, rocket, onClose }) {
           <div className='modal-text-wrapper'>
             <h1 className='modale-rocket-name'>{rocket.name}</h1>
             <p className='modale-rocket-weight'>
-              <strong>Poids:</strong> {Math.floor(rocket.mass.kg / 1000)} Tonnes
+              <strong>{t('Wheigh')}:</strong>{' '}
+              {Math.floor(rocket.mass.kg / 1000)} Tonnes
             </p>
             <p className='modale-rocket-height'>
-              <strong>Taille:</strong> {rocket.height.meters} mètres
+              <strong>{t('Heigh')}:</strong> {rocket.height.meters} mètres
             </p>
             <p className='modale-rocket-firstflight'>
-              <strong>First flight :</strong> {rocket.first_flight}
+              <strong>{t('First flight')} :</strong> {rocket.first_flight}
             </p>
-            <p className='modale-rocket-description'>
-              <strong>Description:</strong> {rocket.description}
-            </p>
+            <div className='modale-description-wrapper'>
+              <p className='modale-rocket-description'>
+                <strong>{t('Description')}:</strong> {rocket.description}
+              </p>
+            </div>
             <p>
-              Get more information on :<span> </span>
+              {t('Get more information on')} :<span> </span>
               <a
                 className='modale-rocket-wiki'
                 href={rocket.wikipedia}
@@ -40,7 +45,7 @@ function CustomModal({ openModal, rocket, onClose }) {
           </div>
           <div className='modal-button-container'>
             <button className='rocket-card-item-btn' onClick={handleClickClose}>
-              Close
+              {t('Close')}
             </button>
           </div>
         </div>

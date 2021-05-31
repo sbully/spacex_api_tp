@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { CustomModal } from '../';
+import { useTranslation } from 'react-i18next';
 
 import Modal from 'react-modal';
 import '../customModal/CustomModal.css';
 
 function RocketItems({ rocket }) {
   const [modal, setModal] = useState({ isOpen: false });
+  const { t, i18n } = useTranslation();
 
   function handleToggleModal() {
     setModal({ isOpen: true });
@@ -30,7 +32,7 @@ function RocketItems({ rocket }) {
         <p className='rocket-card-item-name'>{rocket.name}</p>
         <p className='rocket-card-item-description'>{rocket.description}</p>
         <button className='rocket-card-item-btn' onClick={handleToggleModal}>
-          More information
+          {t('More information')}
         </button>
       </div>
     </li>
