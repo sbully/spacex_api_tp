@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { CardItem } from '../';
 import './Cards.css';
+import { useTranslation } from 'react-i18next';
 
 function Cards() {
   const [incomingMissions, setMissionIncomming] = useState();
   const [rockets, setRocket] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const upcomingRequest = fetch(
@@ -42,7 +44,7 @@ function Cards() {
   return (
     <div className='card_container'>
       <div className='card_wrapper'>
-        {isLoading && <p>Chargement</p>}
+        {isLoading && <p>{t('Loadging')}</p>}
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         <ul className='cards_items'>
           {incomingMissions &&
