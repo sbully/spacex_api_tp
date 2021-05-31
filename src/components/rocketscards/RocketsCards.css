@@ -54,12 +54,12 @@
 }
 .rocket-card-item-btn {
   align-self: flex-end;
+  margin-left: auto;
   padding: 1em;
   text-decoration: none;
   color: #2194e0;
   border: 2px solid #2194e0;
   font-size: 20px;
-
   border-radius: 0.3em;
   transition: all 0.2s ease-in-out;
   position: relative;
@@ -92,4 +92,28 @@
   overflow: hidden;
   font-size: 18px;
   margin-top: 1em;
+}
+
+@media screen and (max-width: 1280px) {
+  .rocket-card-item-btn {
+    font-size: 15px;
+    padding: 0.5rem;
+  }
+  .rocket-card-item-btn:before {
+    width: 2em;
+  }
+  .rocket-card-item-btn:hover:before {
+    transform: skewX(-45deg) translateX(12.8em);
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .rocket-card-item-btn {
+    font-size: 10px;
+    padding: 0.5rem;
+  }
+  .rocket-card-item-btn:hover:before {
+    transform: none;
+    transition: none;
+  }
 }
